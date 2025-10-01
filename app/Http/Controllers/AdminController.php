@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -93,5 +94,10 @@ class AdminController extends Controller
         $data->save();
 
         return redirect()->back();
+    }
+
+    public function bookings(){
+        $data = Booking::all();
+        return view('admin.booking',compact('data'));
     }
 }

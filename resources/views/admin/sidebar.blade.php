@@ -17,6 +17,9 @@
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                   <li><a href="{{ url('create_room') }}">Add Rooms</a></li>
                   <li><a href="{{ url('display_room') }}">Display Rooms</a></li>
+
               </ul>
           </li>
+
+       <li class="active"><a href="{{ url('bookings') }}"> <i class="icon-home"></i>Bookings</a></li>
   </nav>
