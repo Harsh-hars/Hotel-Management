@@ -96,8 +96,16 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function bookings(){
+    public function bookings()
+    {
         $data = Booking::all();
-        return view('admin.booking',compact('data'));
+        return view('admin.booking', compact('data'));
+    }
+
+    public function delete_booking($id)
+    {
+        $data = Booking::find($id);
+        $data->delete();
+        return redirect()->back();
     }
 }
