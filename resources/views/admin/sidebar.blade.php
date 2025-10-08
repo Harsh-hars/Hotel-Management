@@ -22,4 +22,6 @@
           </li>
 
        <li class="active"><a href="{{ url('bookings') }}"> <i class="icon-home"></i>Bookings</a></li>
+
+       <li class="active"><a href="{{ url('gallery') }}"> <i class="icon-home"></i>Gallary</a></li>
   </nav>

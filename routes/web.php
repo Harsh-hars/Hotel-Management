@@ -14,6 +14,8 @@ Route::get('/home', [AdminController::class, 'index'])->name('home');
 
 Route::get('/create_room', [AdminController::class, 'create_room']);
 
+Route::get('/gallery', [AdminController::class, 'gallary']);
+
 Route::post('/add_room', [AdminController::class, 'add_room']);
 
 Route::get('/display_room', [AdminController::class, 'display_room']);
@@ -27,6 +29,11 @@ Route::post('/edit_room/{id}', [AdminController::class, 'edit_room']);
 Route::get('room_details/{id}', [HomeController::class, 'room_details']);
 
 Route::post('add_booking/{id}', [HomeController::class, 'add_booking']);
+
+
+Route::post('upload_gallary', [AdminController::class, 'upload_gallary']);
+
+
 
 Route::get('/bookings', [AdminController::class, 'bookings']);
 
