@@ -31,6 +31,7 @@
                             <th>End Date</th>
                             <th>Status</th>
                             <th>Actions</th>
+                            <th>Status Update</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,6 +49,10 @@
                                 <td>{{ $data->status }}</td>
                                 <td><a onclick="return confirm('Are you sure to delete');"
                                         href="{{ url('delete_booking', $data->id) }}" class="btn btn-danger">Delete</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-success" href="{{ url('approve_booking',$data->id) }}">Approve</a>
+                                    <a class="btn btn-warning" href="{{ url('delete_booking',$data->id) }}">Reject</a>
                                 </td>
                             </tr>
                         @endforeach

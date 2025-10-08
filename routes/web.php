@@ -32,3 +32,6 @@ Route::get('/bookings', [AdminController::class, 'bookings']);
 
 Route::get('/delete_booking/{id}', [AdminController::class, 'delete_booking']);
 
+Route::get('/approve_booking/{id}', [AdminController::class, 'approve_booking']);
+
+Route::get('/delete_booking/{id}', [AdminController::class, 'delete_room_booking']);
