@@ -137,7 +137,7 @@ class AdminController extends Controller
 
         $image = $request->image;
 
-        $imagename = time() . '.' .$image->getClientOriginalExtension();
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
 
         $request->image->move('gallary', $imagename);
 
@@ -146,5 +146,12 @@ class AdminController extends Controller
         $data->save();
 
         return redirect()->back();
+    }
+
+    public function view_gallery()
+    {
+        $gallery = Gallary::all();
+        
+        return view('admin.gallary', compact('gallery'));
     }
 }

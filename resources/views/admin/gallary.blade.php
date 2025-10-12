@@ -53,6 +53,17 @@
             <div class="container-fluid">
                 <div class="form_wrapper">
                     <h2>Gallary</h2>
+
+
+                    {{-- display gallary images --}}
+
+                    @foreach ($gallery as $gallery)
+                        <img src="/gallary/{{ $gallery->image }}" height="200" width="300">
+                    @endforeach
+
+
+
+
                     <form action="{{ url('upload_gallary') }}" method="POST" enctype="multipart/form-data">
 
                         @csrf
