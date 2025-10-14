@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notifiable;
 
 class Contact extends Model
 {
+    use Notifiable;
     protected $fillable = [
 
         'name',

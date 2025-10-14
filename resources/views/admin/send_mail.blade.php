@@ -54,7 +54,7 @@
             <div class="container-fluid">
                 <div class="form_wrapper">
                     <h2>Send Mail to {{ $data->name }}</h2>
-                    <form action="{{ url('add_room') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('mail', $data->id) }}" method="POST" enctype="multipart/form-data">
 
                         @csrf
 

@@ -53,4 +53,4 @@ Route::get('/delete_contact/{id}',[AdminController::class,'delete_contact']);
 
 Route::get('/send_mail/{id}',[AdminController::class,'send_mail']);
 
-Route::get('/mail/{id}',[AdminController::class,'mail']);
+Route::post('/mail/{id}',[AdminController::class,'mail']);

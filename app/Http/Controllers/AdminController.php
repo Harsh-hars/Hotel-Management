@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Room;
 use App\Models\Contact;
 use App\Notifications\SendEmailNofication;
-// use Illuminate\Notifications\Notification;  
+
 use Illuminate\Support\Facades\Notification;
 
 class AdminController extends Controller
@@ -180,18 +180,20 @@ class AdminController extends Controller
         $data = Contact::find($id);
         return view('admin.send_mail', compact('data'));
     }
+
+
     public function mail(Request $request, $id)
     {
         $data = Contact::find($id);
         $details = [
-            'greeting' => $request->greeting ,
+            'greeting' => $request->greeting,
             'body' => $request->body,
             'action_text' => $request->action_text,
             'action_url' => $request->action_url,
             'endline' => $request->endline,
         ];
 
-        Notification::send($data,new SendEmailNofication($details));
+        Notification::send($data, new SendEmailNofication($details));
 
         return redirect()->back();
     }
