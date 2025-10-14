@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <base href="/public">
     @include('admin.css')
     <style>
         .form_div label {
@@ -52,37 +53,42 @@
 
             <div class="container-fluid">
                 <div class="form_wrapper">
-                    <h2>Gallary</h2>
-
-                    <div class="row" style="margin-bottom:20px">
-                        {{-- display gallary images --}}
-
-                        @foreach ($gallery as $gallery)
-                            <div class="col-md-4">
-                                <img src="/gallary/{{ $gallery->image }}" height="200" width="300">
-                                <a class="btn btn-danger" href="{{ url('delete_gallery',$gallery->id) }}">Delete gallary</a>
-                            </div>
-                        @endforeach
-
-                    </div>
-
-
-
-
-                    <form action="{{ url('upload_gallary') }}" method="POST" enctype="multipart/form-data">
+                    <h2>Send Mail to {{ $data->name }}</h2>
+                    <form action="{{ url('add_room') }}" method="POST" enctype="multipart/form-data">
 
                         @csrf
 
                         <div class="form_div">
-                            <label for="room_title">Add Gallary</label>
-                            <input class='form_field' type="file" name="image">
+                            <label for="Greeting">Greeting</label>
+                            <input class='form_field' type="text" name="greeting">
+                        </div>
+                        <div class="form_div">
+                            <label for="mail_body">Mail Body</label>
+                            <textarea class='form_field' name="mail_body"></textarea>
+
+                        </div>
+                        <div class="form_div">
+                            <label for="action_test">Action Test</label>
+                            <input class='form_field' type="text" name="action_text">
+
                         </div>
 
                         <div class="form_div">
-                            <input style="width:200px; padding:10px" class='form_field btn btn-primary' type="submit"
-                                value="Add Gallary">
+                            <label for="action_url">Action Url</label>
+                            <input class='form_field' type="text" name="action_url">
+
+                        </div>
+                        <div class="form_div">
+                            <label for="end_line">End Line</label>
+                            <input class='form_field' type="text" name="end_line">
+
                         </div>
 
+                       
+                        <div class="form_div">
+                            <input style="width:200px; padding:10px" class='form_field btn btn-primary' type="submit"
+                                value="Send Mail">
+                        </div>
                     </form>
                 </div>
             </div>

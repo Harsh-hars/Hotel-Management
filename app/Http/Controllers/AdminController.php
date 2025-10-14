@@ -8,6 +8,10 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Room;
+use App\Models\Contact;
+use App\Notifications\SendEmailNofication;
+// use Illuminate\Notifications\Notification;  
+use Illuminate\Support\Facades\Notification;
 
 class AdminController extends Controller
 {
@@ -16,10 +20,11 @@ class AdminController extends Controller
     public function index()
     {
         $data = Room::all();
+        $gallery = Gallary::all();
         if (Auth::id()) {
             $usertype = Auth::user()->usertype;
             if ($usertype == 'user') {
-                return view('home.index', compact('data'));
+                return view('home.index', compact('data', 'gallery'));
             } else if ($usertype == 'admin') {
                 return view('admin.index');
             } else {
@@ -31,7 +36,8 @@ class AdminController extends Controller
     public function home()
     {
         $data = Room::all();
-        return view('home.index', compact('data'));
+        $gallery = Gallary::all();
+        return view('home.index', compact('data', 'gallery'));
     }
 
     public function create_room()
@@ -128,7 +134,8 @@ class AdminController extends Controller
 
     public function gallary()
     {
-        return view('admin.gallary');
+        $gallery = Gallary::all();
+        return view('admin.gallary', compact('gallery'));
     }
 
     public function upload_gallary(Request $request)
@@ -148,10 +155,44 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function view_gallery()
+    public function delete_gallery($id)
     {
-        $gallery = Gallary::all();
-        
-        return view('admin.gallary', compact('gallery'));
+        $gallary_image = Gallary::find($id);
+        $gallary_image->delete();
+        return redirect()->back();
+    }
+
+    public function messages()
+    {
+        $data =  Contact::all();
+        return view('admin.messages', compact('data'));
+    }
+
+    public function delete_contact($id)
+    {
+        $data = Contact::find($id);
+        $data->delete();
+        return redirect()->back();
+    }
+
+    public function send_mail($id)
+    {
+        $data = Contact::find($id);
+        return view('admin.send_mail', compact('data'));
+    }
+    public function mail(Request $request, $id)
+    {
+        $data = Contact::find($id);
+        $details = [
+            'greeting' => $request->greeting ,
+            'body' => $request->body,
+            'action_text' => $request->action_text,
+            'action_url' => $request->action_url,
+            'endline' => $request->endline,
+        ];
+
+        Notification::send($data,new SendEmailNofication($details));
+
+        return redirect()->back();
     }
 }

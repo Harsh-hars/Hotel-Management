@@ -21,7 +21,9 @@
               </ul>
           </li>
 
-       <li class="active"><a href="{{ url('bookings') }}"> <i class="icon-home"></i>Bookings</a></li>
+       <li ><a href="{{ url('bookings') }}"> <i class="icon-home"></i>Bookings</a></li>
 
-       <li class="active"><a href="{{ url('gallery') }}"> <i class="icon-home"></i>Gallary</a></li>
+       <li ><a href="{{ url('gallery') }}"> <i class="icon-home"></i>Gallary</a></li>
+
+       <li ><a href="{{ url('messages') }}"> <i class="icon-home"></i>Messages</a></li>
   </nav>
