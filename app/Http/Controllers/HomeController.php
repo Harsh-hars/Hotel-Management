@@ -6,6 +6,7 @@ use App\Models\Room;
 use Illuminate\Http\Request;
 use App\Models\Booking;
 use App\Models\Contact;
+use App\Models\Gallary;
 
 class HomeController extends Controller
 {
@@ -66,5 +67,14 @@ class HomeController extends Controller
     public function our_rooms(){
         $data = Room::all();
         return (view('home.our_rooms',compact('data')));
+    }
+
+    public function our_gallery(){
+        $gallery = Gallary::all();
+        return view('home.our_gallery',compact('gallery'));
+    }
+
+    public function contact_us(){
+        return view('home.contact_us');
     }
 }

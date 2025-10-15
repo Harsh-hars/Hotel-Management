@@ -29,13 +29,11 @@
                                 <a class="nav-link" href="{{ url('/our_room') }}">Our room</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/gallery') }}">Gallery</a>
+                                <a class="nav-link" href="{{ url('/our_gallery') }}">Gallery</a>
                             </li>
+                           
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/blog') }}">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/contact') }}">Contact Us</a>
+                                <a class="nav-link" href="{{ url('/contact_us') }}">Contact Us</a>
                             </li>
 
                             {{-- Authentication Links --}}
