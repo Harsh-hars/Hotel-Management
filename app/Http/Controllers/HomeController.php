@@ -62,4 +62,9 @@ class HomeController extends Controller
 
         return redirect()->back()->with('message', 'Message sent successfully');
     }
+
+    public function our_rooms(){
+        $data = Room::all();
+        return (view('home.our_rooms',compact('data')));
+    }
 }

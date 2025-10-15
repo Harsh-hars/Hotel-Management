@@ -30,10 +30,7 @@ Route::get('room_details/{id}', [HomeController::class, 'room_details']);
 
 Route::post('add_booking/{id}', [HomeController::class, 'add_booking']);
 
-
 Route::post('upload_gallary', [AdminController::class, 'upload_gallary']);
-
-
 
 Route::get('/bookings', [AdminController::class, 'bookings'])->middleware(['auth','admin']);
 
@@ -54,3 +51,7 @@ Route::get('/delete_contact/{id}',[AdminController::class,'delete_contact']);
 Route::get('/send_mail/{id}',[AdminController::class,'send_mail']);
 
 Route::post('/mail/{id}',[AdminController::class,'mail']);
+
+Route::get('/our_room',[HomeController::class,'our_rooms']);
+
+
