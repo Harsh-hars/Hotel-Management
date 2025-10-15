@@ -7,10 +7,10 @@
                 </div>
             </div>
             <div class="row">
-                @foreach ($gallery as $gallery)
+                @foreach ($gallery as $item)
                     <div class="col-md-3 col-sm-6">
                         <div class="gallery_img">
-                            <figure><img style="width:350px; height:300px " src="/gallary/{{ $gallery->image }}" alt="#" /></figure>
+                            <figure><img style="width:350px; height:300px " src="/gallary/{{ $item->image }}" alt="#" /></figure>
                         </div>
                     </div>
                 @endforeach

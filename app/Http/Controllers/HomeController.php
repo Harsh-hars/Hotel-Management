@@ -50,16 +50,16 @@ class HomeController extends Controller
         }
     }
 
-    public function contact(Request $request){
+    public function contact(Request $request)
+    {
         $contact = new Contact;
         $contact->name = $request->name;
         $contact->phone = $request->phone;
-        $contact->message=$request->message;
+        $contact->message = $request->message;
         $contact->email = $request->email;
 
         $contact->save();
 
         return redirect()->back()->with('message', 'Message sent successfully');
-
     }
 }

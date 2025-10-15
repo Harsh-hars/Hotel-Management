@@ -35,7 +35,7 @@ Route::post('upload_gallary', [AdminController::class, 'upload_gallary']);
 
 
 
-Route::get('/bookings', [AdminController::class, 'bookings']);
+Route::get('/bookings', [AdminController::class, 'bookings'])->middleware(['auth','admin']);
 
 Route::get('/messages', [AdminController::class, 'messages']);
 

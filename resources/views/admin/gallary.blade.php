@@ -57,10 +57,10 @@
                     <div class="row" style="margin-bottom:20px">
                         {{-- display gallary images --}}
 
-                        @foreach ($gallery as $gallery)
+                        @foreach ($gallery as $item)
                             <div class="col-md-4">
-                                <img src="/gallary/{{ $gallery->image }}" height="200" width="300">
-                                <a class="btn btn-danger" href="{{ url('delete_gallery',$gallery->id) }}">Delete gallary</a>
+                                <img src="/gallary/{{ $item->image }}" height="200" width="300">
+                                <a class="btn btn-danger" href="{{ url('delete_gallery',$item->id) }}">Delete gallary</a>
                             </div>
                         @endforeach
 

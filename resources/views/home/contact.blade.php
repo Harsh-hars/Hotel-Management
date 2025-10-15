@@ -16,7 +16,8 @@
       <div class="row">
 
           <div class="col-md-6">
-              <form id="request" class="main_form" method="POST" action="{{ url('mail',$data->id) }}">
+              {{-- <form id="request" class="main_form" method="POST" action="{{ url('mail',$data->id) }}"> --}}
+              <form id="request" class="main_form" method="POST" action="{{ url('/contact') }}">
                   @csrf
                   <div class="row">
                       <div class="col-md-12 ">

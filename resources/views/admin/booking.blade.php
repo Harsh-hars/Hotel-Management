@@ -35,24 +35,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data as $data)
+                        @foreach ($data as $item)
                             <tr>
-                                <td>{{ $data->room_id }}</td>
-                                <td>{{ $data->name }}</td>
-                                <td>{{ $data->email }}</td>
-                                <td>{{ $data->phone }}</td>
-                                <td>{{ $data->room->room_title }}</td>
-                                <td>{{ $data->room->price }}</td>
-                                <td>{{ $data->room->room_type }}</td>
-                                <td>{{ $data->start_date }}</td>
-                                <td>{{ $data->end_date }}</td>
-                                <td>{{ $data->status }}</td>
+                                <td>{{ $item->room_id }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->phone }}</td>
+                                <td>{{ $item->room->room_title }}</td>
+                                <td>{{ $item->room->price }}</td>
+                                <td>{{ $item->room->room_type }}</td>
+                                <td>{{ $item->start_date }}</td>
+                                <td>{{ $item->end_date }}</td>
+                                <td>{{ $item->status }}</td>
                                 <td><a onclick="return confirm('Are you sure to delete');"
-                                        href="{{ url('delete_booking', $data->id) }}" class="btn btn-danger">Delete</a>
+                                        href="{{ url('delete_booking', $item->id) }}" class="btn btn-danger">Delete</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-success" href="{{ url('approve_booking',$data->id) }}">Approve</a>
-                                    <a class="btn btn-warning" href="{{ url('delete_booking',$data->id) }}">Reject</a>
+                                    <a class="btn btn-success" href="{{ url('approve_booking',$item->id) }}">Approve</a>
+                                    <a class="btn btn-warning" href="{{ url('delete_booking',$item->id) }}">Reject</a>
                                 </td>
                             </tr>
                         @endforeach
