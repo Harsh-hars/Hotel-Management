@@ -12,9 +12,8 @@
             </div>
             <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
                 <nav class="navigation navbar navbar-expand-md navbar-dark">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
-                        aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+                        aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarsExample04">
@@ -31,7 +30,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/our_gallery') }}">Gallery</a>
                             </li>
-                           
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/contact_us') }}">Contact Us</a>
                             </li>
@@ -42,7 +41,8 @@
                                     <!-- User Dropdown -->
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-                                           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
                                             {{ Auth::user()->name }}
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -51,10 +51,11 @@
                                             <div class="dropdown-divider"></div>
                                             <!-- Logout -->
                                             <a class="dropdown-item" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
                                             </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
                                                 @csrf
                                             </form>
                                         </div>
